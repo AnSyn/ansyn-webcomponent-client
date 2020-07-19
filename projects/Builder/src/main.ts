@@ -9,5 +9,39 @@ if (environment.production) {
 	enableProdMode();
 }
 
-fetchConfigProviders('assets/config/app.config.json')
+const mergeChanges = {
+	coreConfig: {
+		noInitialSearch: true,
+		isFooterCollapsible: true
+	},
+	toolsConfig: {
+		ShadowMouse: {
+			forceSendShadowMousePosition: true
+		}
+	},
+	layersManagerConfig: {
+		schema: null
+	},
+	menuConfig: {
+		menuItems: [
+			'Data Layers'
+		],
+		isCollapsible: true
+	},
+	mapFacadeConfig: {
+		mapSearch: {
+			active: false
+		}
+	},
+	multipleOverlaysSourceConfig: {
+		useAngleDebugMode: false,
+		indexProviders: {
+			SENTINEL: {
+				inActive: true
+			}
+		}
+	}
+};
+
+fetchConfigProviders('assets/config/app.config.json', mergeChanges)
 	.then(providers => platformBrowserDynamic(providers).bootstrapModule(AppModule).catch(err => console.log(err)));

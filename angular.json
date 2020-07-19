@@ -162,7 +162,6 @@
 								"input": "node_modules/cesium/Build/Cesium",
 								"output": "/assets/Cesium"
 							},
-							"projects/Builder/src/favicon.ico",
 							"projects/Builder/src/assets"
 						],
 						"styles": [
@@ -171,8 +170,7 @@
 						],
 						"scripts": [
 							"node_modules/cesium/Build/Cesium/Cesium.js"
-						],
-						"es5BrowserSupport": true
+						]
 					},
 					"configurations": {
 						"production": {
@@ -194,8 +192,8 @@
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "2mb",
-									"maximumError": "5mb"
+									"maximumWarning": "5mb",
+									"maximumError": "10mb"
 								}
 							]
 						}
