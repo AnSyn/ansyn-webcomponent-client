@@ -1,30 +1,27 @@
-interface INumberConfigModel {
-	placeholder: string;
+interface IConfigModel {
+	id: string;
 	path: string;
+	placeholder: string;
+}
+interface INumberConfigModel extends IConfigModel {
 	type: 'number';
 	defaultValue: number;
 }
 
-interface IBooleanConfigModel {
-	placeholder: string;
-	path: string;
+interface IBooleanConfigModel extends IConfigModel {
 	type: 'boolean';
 	defaultValue: boolean;
 }
 
-interface IStringConfigModel {
-	placeholder: string;
-	path: string;
+interface IStringConfigModel extends IConfigModel {
 	type: 'string';
 	defaultValue: string;
 }
 
-interface IEnumConfigModel {
-	placeholder: string;
-	path: string;
+interface IEnumConfigModel extends IConfigModel {
 	type: 'enum';
 	enum: string[];
 	defaultValue: string[];
 }
 
-export type IConfigModel = INumberConfigModel | IBooleanConfigModel | IStringConfigModel | IEnumConfigModel;
+export type configModel = INumberConfigModel | IBooleanConfigModel | IStringConfigModel | IEnumConfigModel;

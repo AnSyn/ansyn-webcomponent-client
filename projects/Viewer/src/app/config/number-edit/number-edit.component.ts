@@ -7,6 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NumberEditComponent implements OnInit {
 	@Input() value;
+	@Input() id;
+	@Input() form;
 	constructor() {
 	}
 

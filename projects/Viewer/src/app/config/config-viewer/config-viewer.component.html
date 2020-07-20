@@ -3,8 +3,16 @@
 	<p>{{config.placeholder}}</p>
 	<ng-container [ngSwitch]="config.type">
 		<app-number-edit
+			[id]="config.id"
+			[form]="formGroup"
 			*ngSwitchCase="'number'"
 		[value]="config.defaultValue"></app-number-edit>
+		<app-boolean-edit
+			[id]="config.id"
+			[form]="formGroup"
+			[value]="config.defaultValue"
+			*ngSwitchCase="'boolean'"></app-boolean-edit>
 		<p *ngSwitchDefault> asdasd</p>
 	</ng-container>
 </div>
+	<button mat-raised-button (click)="downloadComponent()">Click to download component</button>

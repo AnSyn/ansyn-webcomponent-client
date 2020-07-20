@@ -4,7 +4,8 @@
     "codelyzer"
   ],
   "rules": {
-    "array-type": false,
+	  "align": false,
+	  "array-type": false,
     "arrow-parens": false,
     "deprecation": {
       "severity": "warning"
