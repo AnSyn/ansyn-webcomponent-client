@@ -3,21 +3,22 @@ import { configModel } from './config-viewer/model/config.model';
 const config: configModel[] = [
 	{
 		id: 'mouseShadow',
-		placeholder: 'enable shadow mouse by default',
+		hint: 'Enable shadow mouse by default',
 		path: 'toolsConfig.ShadowMouse.activeByDefault',
 		type: 'boolean',
 		defaultValue: true
 	},
 	{
 		id: 'filterNumber',
-		placeholder: 'enter maximum filters to show',
+		hint: 'Enter maximum filters to show',
 		path: 'statusBarConfig.filters.maximumOpen',
 		type: 'number',
 		defaultValue: 2
 	},
 	{
 		id: 'filtersName',
-		placeholder: 'filter to be showed',
+		hint: 'Filter to be showed',
+		placeholder: 'Filters',
 		path: 'statusBarConfig.filters.filterNames',
 		type: 'enum',
 		enum: ['sensorType', 'sensorName', 'sourceType', 'isGeoRegistered', 'containedInSearchPolygon'],
@@ -25,7 +26,8 @@ const config: configModel[] = [
 	},
 	{
 		id: 'menuNames',
-		placeholder: 'menu to be shown',
+		hint: 'Menu to be shown',
+		placeholder: 'Menu Items',
 		path: 'menuConfig.menuItems',
 		type: 'enum',
 		enum: ['Filters', 'Results table', 'Data Layers', 'Tools', 'Permissions'],

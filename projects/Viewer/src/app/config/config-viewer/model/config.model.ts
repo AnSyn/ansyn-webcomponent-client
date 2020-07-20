@@ -1,7 +1,7 @@
 interface IConfigModel {
 	id: string;
 	path: string;
-	placeholder: string;
+	hint: string;
 }
 interface INumberConfigModel extends IConfigModel {
 	type: 'number';
@@ -16,11 +16,13 @@ interface IBooleanConfigModel extends IConfigModel {
 interface IStringConfigModel extends IConfigModel {
 	type: 'string';
 	defaultValue: string;
+	placeholder: string;
 }
 
 interface IEnumConfigModel extends IConfigModel {
 	type: 'enum';
 	enum: string[];
+	placeholder: string;
 	defaultValue: string[];
 }
 

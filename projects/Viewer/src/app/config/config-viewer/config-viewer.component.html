@@ -1,6 +1,6 @@
-<h4>you can edit the default configuration:</h4>
+<h2>You can edit the default configuration:</h2>
 <div *ngFor="let config of appConfig">
-	<p>{{config.placeholder}}</p>
+	<p>{{config.hint}}</p>
 	<ng-container [ngSwitch]="config.type">
 		<app-number-edit
 			[id]="config.id"
@@ -12,7 +12,20 @@
 			[form]="formGroup"
 			[value]="config.defaultValue"
 			*ngSwitchCase="'boolean'"></app-boolean-edit>
-		<p *ngSwitchDefault> asdasd</p>
+		<app-enum-edit
+			[id]="config.id"
+			[form]="formGroup"
+			[placeholder]="config.placeholder"
+			[values]="config.enum"
+			[value]="config.defaultValue"
+			*ngSwitchCase="'enum'"></app-enum-edit>
 	</ng-container>
 </div>
-	<button mat-raised-button (click)="downloadComponent()">Click to download component</button>
+<div class="download">
+	<mat-icon style="cursor: pointer"
+			  mat-raised-button
+			  color="accent"
+			  (click)="downloadComponent()">archive</mat-icon>
+	<mat-label>Click to download component</mat-label>
+</div>
+	<!--<button mat-raised-button (click)="downloadComponent()">Click to download component</button>-->
