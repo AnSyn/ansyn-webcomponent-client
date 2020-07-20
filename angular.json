@@ -26,11 +26,7 @@
 							"projects/Viewer/src/styles.css",
 							"projects/Viewer/src/app.theme.scss"
 						],
-						"scripts": [
-							{
-								"input": "node_modules/document-register-element/build/document-register-element.js"
-							}
-						],
+						"scripts": [],
 						"es5BrowserSupport": true
 					},
 					"configurations": {
@@ -171,7 +167,10 @@
 							"node_modules/@ansyn/ansyn/assets/styles/styles.css"
 						],
 						"scripts": [
-							"node_modules/cesium/Build/Cesium/Cesium.js"
+							"node_modules/cesium/Build/Cesium/Cesium.js",
+							{
+								"input": "node_modules/document-register-element/build/document-register-element.js"
+							}
 						]
 					},
 					"configurations": {

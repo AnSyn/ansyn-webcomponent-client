@@ -1,14 +1,10 @@
 const PROJECT_NAME = 'Builder';
 const distDir = `./dist/${PROJECT_NAME}`;
-const destFile = './projects/Viewer/src/assets/element.tgz';
 const fs = require('fs-extra');
-const tar = require('tar');
 const Terser = require("terser");
 
 
 (async function build() {
-	const assetsDir = `${distDir}/assets`;
-	const resDir = `${distDir}/res`;
 	const filesNames = [
 		`${distDir}/styles.js`,
 		`${distDir}/polyfills.js`,
@@ -22,24 +18,17 @@ const Terser = require("terser");
 	}, {});
 
 	try {
-		// await fs.remove(destDir);
-		await fs.ensureFile(destFile);
 		const result = Terser.minify(files);
 		if (result.error) {
 			console.log(result.error);
 		} else {
 			await fs.outputFile(`${distDir}/${minifiedFile}`, result.code, "utf8");
-			tar.c(
-				{
-					cwd  : distDir,
-					gzip: true
-				},
-				[
-					'assets',
-					'res',
-					minifiedFile
-				]
-			).pipe(fs.createWriteStream(destFile))
+			for (const file of filesNames) {
+				await fs.remove(file);
+			}
+			await fs.remove(`${distDir}/index.html`);
+
+			console.log(`component was created you can move ${distDir} content to the server app`);
 		}
 	} catch (e) {
 		console.error(e.message);
