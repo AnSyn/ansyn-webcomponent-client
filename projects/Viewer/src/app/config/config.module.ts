@@ -6,6 +6,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 
 import config from './config';
 import { ConfigViewerComponent } from './config-viewer/config-viewer.component';
@@ -22,7 +23,8 @@ import { StringEditComponent } from './string-edit/string-edit.component';
 		MatSlideToggleModule,
 		MatSelectModule,
 		MatButtonModule,
-		MatIconModule
+		MatIconModule,
+		MatInputModule
 	],
 	exports: [ConfigViewerComponent],
 	providers: [

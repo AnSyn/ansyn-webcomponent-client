@@ -19,6 +19,12 @@
 			[values]="config.enum"
 			[value]="config.defaultValue"
 			*ngSwitchCase="'enum'"></app-enum-edit>
+		<app-string-edit
+			[id]="config.id"
+			[form]="formGroup"
+			[placeholder]="config.placeholder"
+			[value]="config.defaultValue"
+			*ngSwitchCase="'string'"></app-string-edit>
 	</ng-container>
 </div>
 <div class="download">
