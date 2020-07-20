@@ -10,10 +10,6 @@ if (environment.production) {
 }
 
 const mergeChanges = {
-	coreConfig: {
-		noInitialSearch: true,
-		isFooterCollapsible: true
-	},
 	toolsConfig: {
 		ShadowMouse: {
 			forceSendShadowMousePosition: true
@@ -32,6 +28,9 @@ const mergeChanges = {
 		mapSearch: {
 			active: false
 		}
+	},
+	coreConfig: {
+		enable3D: false
 	},
 	multipleOverlaysSourceConfig: {
 		useAngleDebugMode: false,

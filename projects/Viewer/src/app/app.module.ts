@@ -2,15 +2,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ConfigEditComponent } from './config-edit/config-edit.component';
+import { ConfigModule } from './config/config.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
 	declarations: [
-		AppComponent,
-		ConfigEditComponent
+		AppComponent
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		ConfigModule,
+		BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

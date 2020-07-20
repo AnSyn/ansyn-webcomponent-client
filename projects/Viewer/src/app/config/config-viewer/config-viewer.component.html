@@ -1,0 +1,10 @@
+<h4>you can edit the default configuration:</h4>
+<div *ngFor="let config of appConfig">
+	<p>{{config.placeholder}}</p>
+	<ng-container [ngSwitch]="config.type">
+		<app-number-edit
+			*ngSwitchCase="'number'"
+		[value]="config.defaultValue"></app-number-edit>
+		<p *ngSwitchDefault> asdasd</p>
+	</ng-container>
+</div>
