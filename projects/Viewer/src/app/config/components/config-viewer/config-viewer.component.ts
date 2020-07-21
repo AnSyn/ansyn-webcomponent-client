@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { configModel } from './model/config.model';
+import { configModel } from '../../model/config.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({

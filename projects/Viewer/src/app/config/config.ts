@@ -1,4 +1,4 @@
-import { configModel } from './config-viewer/model/config.model';
+import { configModel } from './model/config.model';
 
 const config: configModel[] = [
 	{

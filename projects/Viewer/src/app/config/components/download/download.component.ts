@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { environment } from '../../../environments/environment';
-import { configModel } from '../config-viewer/model/config.model';
+import { environment } from '../../../../environments/environment';
+import { configModel } from '../../model/config.model';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
 import { saveAs } from 'file-saver';
 import { filter, tap } from 'rxjs/operators';
