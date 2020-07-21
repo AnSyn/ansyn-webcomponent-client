@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 @Component({
 	selector: 'app-enum-edit',
 	templateUrl: './enum-edit.component.html',
-	styleUrls: ['./enum-edit.component.css']
+	styleUrls: ['./enum-edit.component.less']
 })
 export class EnumEditComponent implements OnInit {
 	@Input() id;

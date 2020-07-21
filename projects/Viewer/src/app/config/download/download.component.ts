@@ -13,7 +13,7 @@ const defaultIcon = 'archive';
 @Component({
 	selector: 'app-download',
 	templateUrl: './download.component.html',
-	styleUrls: ['./download.component.css']
+	styleUrls: ['./download.component.less']
 })
 export class DownloadComponent implements OnInit, OnDestroy {
 	@Input() form: FormGroup;

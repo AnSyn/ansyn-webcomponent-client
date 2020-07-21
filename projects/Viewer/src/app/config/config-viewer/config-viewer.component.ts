@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
 	selector: 'app-config-viewer',
 	templateUrl: './config-viewer.component.html',
-	styleUrls: ['./config-viewer.component.css']
+	styleUrls: ['./config-viewer.component.less']
 })
 export class ConfigViewerComponent implements OnInit {
 	formGroup: FormGroup;
