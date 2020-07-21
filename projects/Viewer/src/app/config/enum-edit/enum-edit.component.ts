@@ -12,12 +12,11 @@ export class EnumEditComponent implements OnInit {
 	@Input() value: string[];
 	@Input() form;
 	@Input() placeholder;
-	control = new FormControl();
 	constructor() {
 	}
 
 	ngOnInit() {
-		this.control.setValue(this.value);
+		this.form.get(this.id).setValue(this.value);
 	}
 
 }

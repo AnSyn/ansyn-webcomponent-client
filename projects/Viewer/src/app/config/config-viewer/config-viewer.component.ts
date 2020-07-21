@@ -1,7 +1,11 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { configModel } from './model/config.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+import { saveAs } from 'file-saver';
 
+const set = require('lodash.set');
 @Component({
 	selector: 'app-config-viewer',
 	templateUrl: './config-viewer.component.html',
@@ -11,6 +15,7 @@ export class ConfigViewerComponent implements OnInit {
 	formGroup: FormGroup;
 
 	constructor(@Inject('config') protected appConfig: configModel[],
+				protected http: HttpClient,
 				formBuilder: FormBuilder) {
 		this.formGroup = formBuilder.group(this.buildConfigToForm());
 	}
@@ -20,7 +25,12 @@ export class ConfigViewerComponent implements OnInit {
 
 
 	downloadComponent() {
-		console.log(JSON.stringify(this.formGroup.value, null, 4));
+		console.log(this.formGroup.value);
+		const merged = {};
+		this.appConfig.forEach( ({path, id}) => {
+			set(merged, path, this.formGroup.value[id]);
+		});
+		//this.http.post(`${environment.serverUrl}/component`, merged, {responseType: 'blob'}).subscribe( blob => saveAs(blob, 'element.tgz'));
 	}
 
 
