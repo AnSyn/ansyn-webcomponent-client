@@ -9,6 +9,20 @@ const config: configModel[] = [
 		defaultValue: true
 	},
 	{
+		id: 'footerCollapse',
+		hint: 'timeline could be collapse',
+		path: 'coreConfig.isFooterCollapsible',
+		type: 'boolean',
+		defaultValue: true
+	},
+	{
+		id: 'menuCollapse',
+		hint: 'menu could be collapse',
+		path: 'menuConfig.isCollapsible',
+		type: 'boolean',
+		defaultValue: true
+	},
+	{
 		id: 'filterNumber',
 		hint: 'Enter maximum filters to show',
 		path: 'statusBarConfig.filters.maximumOpen',
