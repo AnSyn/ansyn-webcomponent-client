@@ -9,14 +9,12 @@ import { FormControl } from '@angular/forms';
 export class EnumEditComponent implements OnInit {
 	@Input() id;
 	@Input() values: string[];
-	@Input() value: string[];
 	@Input() form;
 	@Input() placeholder;
 	constructor() {
 	}
 
 	ngOnInit() {
-		this.form.get(this.id).setValue(this.value);
 	}
 
 }

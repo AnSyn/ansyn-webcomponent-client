@@ -6,6 +6,7 @@ import { environment } from '../../../environments/environment';
 import { saveAs } from 'file-saver';
 
 const set = require('lodash.set');
+
 @Component({
 	selector: 'app-config-viewer',
 	templateUrl: './config-viewer.component.html',
@@ -25,12 +26,12 @@ export class ConfigViewerComponent implements OnInit {
 
 
 	downloadComponent() {
-		console.log(this.formGroup.value);
 		const merged = {};
-		this.appConfig.forEach( ({path, id}) => {
+		this.appConfig.forEach(({ path, id }) => {
 			set(merged, path, this.formGroup.value[id]);
 		});
-		//this.http.post(`${environment.serverUrl}/component`, merged, {responseType: 'blob'}).subscribe( blob => saveAs(blob, 'element.tgz'));
+		this.http.post(`${ environment.serverUrl }/component`, merged, { responseType: 'blob' }).subscribe(blob => saveAs(blob, 'element.tgz'));
+
 	}
 
 
