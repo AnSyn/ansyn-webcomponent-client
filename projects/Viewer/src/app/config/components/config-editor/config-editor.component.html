@@ -1,0 +1,28 @@
+<div *ngFor="let config of appConfig" [formGroup]="form">
+	<mat-label>{{config.hint}}</mat-label>
+	<ng-container [ngSwitch]="config.type">
+		<mat-slider
+			[formControlName]="config.id"
+			thumbLabel
+			step="1"
+			min="0"
+			max="5"
+			*ngSwitchCase="'number'"
+		></mat-slider>
+		<mat-slide-toggle
+			[formControlName]="config.id" [checked]="config.defaultValue"
+			*ngSwitchCase="'boolean'"></mat-slide-toggle>
+		<mat-form-field *ngSwitchCase="'enum'">
+			<mat-label>{{config.placeholder}}</mat-label>
+		<mat-select multiple
+					[formControlName]="config.id">
+			<mat-option *ngFor="let v of config.enum" [value]="v">{{v}}</mat-option>
+		</mat-select>
+		</mat-form-field>
+		<mat-form-field *ngSwitchCase="'string'">
+		<input matInput [placeholder]="config.placeholder"
+			   [formControlName]="config.id"
+			   [value]="config.defaultValue">
+		</mat-form-field>
+	</ng-container>
+</div>

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnumEditComponent } from './enum-edit.component';
+import { ConfigEditorComponent } from './config-editor.component';
 
-describe('EnumEditComponent', () => {
-  let component: EnumEditComponent;
-  let fixture: ComponentFixture<EnumEditComponent>;
+describe('ConfigEditorComponent', () => {
+  let component: ConfigEditorComponent;
+  let fixture: ComponentFixture<ConfigEditorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EnumEditComponent ]
+      declarations: [ ConfigEditorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EnumEditComponent);
+    fixture = TestBed.createComponent(ConfigEditorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

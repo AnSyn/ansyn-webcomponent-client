@@ -1,32 +1,4 @@
 <h2>You can edit the default configuration:</h2>
-<div *ngFor="let config of appConfig">
-	<p>{{config.hint}}</p>
-	<ng-container [ngSwitch]="config.type">
-		<app-number-edit
-			[id]="config.id"
-			[form]="formGroup"
-			*ngSwitchCase="'number'"
-		[value]="config.defaultValue"></app-number-edit>
-		<app-boolean-edit
-			[id]="config.id"
-			[form]="formGroup"
-			[value]="config.defaultValue"
-			*ngSwitchCase="'boolean'"></app-boolean-edit>
-		<app-enum-edit
-			[id]="config.id"
-			[form]="formGroup"
-			[placeholder]="config.placeholder"
-			[values]="config.enum"
-			*ngSwitchCase="'enum'"></app-enum-edit>
-		<app-string-edit
-			[id]="config.id"
-			[form]="formGroup"
-			[placeholder]="config.placeholder"
-			[value]="config.defaultValue"
-			*ngSwitchCase="'string'"></app-string-edit>
-	</ng-container>
-</div>
-<div class="download">
-	<app-download [form]="formGroup"></app-download>
-</div>
+<app-config-editor [form]="formGroup"></app-config-editor>
+<app-download [form]="formGroup"></app-download>
 	<!--<button mat-raised-button (click)="downloadComponent()">Click to download component</button>-->

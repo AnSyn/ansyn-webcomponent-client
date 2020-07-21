@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { configModel } from '../../model/config.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { configModel } from '../../model/config.model';
 
 @Component({
 	selector: 'app-config-viewer',
