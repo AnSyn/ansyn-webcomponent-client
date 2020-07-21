@@ -6,17 +6,7 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-$primary: (
-	100: #f6f6f6,
-	500: #e6e6e6,
-	700: #b2b2b2,
-	contrast: (
-		100: $dark-primary-text,
-		500: $dark-primary-text,
-		700: $dark-primary-text,
-	)
-);
-$accent: (
+$app-color: (
 	100: #1de3f9,
 	500: #1cc7dd,
 	700: #0b3841,
@@ -29,8 +19,8 @@ $accent: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$my-app-primary: mat-palette($primary);
-$my-app-accent: mat-palette($accent);
+$my-app-primary: mat-palette($app-color);
+$my-app-accent: mat-palette($app-color);
 
 // The warn palette is optional (defaults to red).
 $my-app-warn:    mat-palette($mat-red);

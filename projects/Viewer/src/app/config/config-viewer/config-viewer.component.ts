@@ -15,7 +15,7 @@ const set = require('lodash.set');
 export class ConfigViewerComponent implements OnInit {
 	formGroup: FormGroup;
 
-	constructor(@Inject('config') protected appConfig: configModel[],
+	constructor(@Inject('config') public appConfig: configModel[],
 				protected http: HttpClient,
 				formBuilder: FormBuilder) {
 		this.formGroup = formBuilder.group(this.buildConfigToForm());
