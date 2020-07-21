@@ -17,7 +17,7 @@ const defaultIcon = 'archive';
 })
 export class DownloadComponent implements OnInit, OnDestroy {
 	@Input() form: FormGroup;
-	icon: null | 'archive' | 'done' = null;
+	icon: null | 'archive' | 'done' = defaultIcon;
 	subscriptions: Subscription[] = [];
 
 	constructor(@Inject('config') protected appConfig: configModel[],
