@@ -15,15 +15,6 @@ div {
 .download, h4 {
 	align-self: center
 }
-.download {
-	flex-direction: column;
-}
-
-.download mat-icon {
-	font-size: 55px;
-	width: 55px;
-	height: 55px;
-}
 
 p {
 	margin-right: 10px;

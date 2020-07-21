@@ -27,10 +27,6 @@
 	</ng-container>
 </div>
 <div class="download">
-	<mat-icon style="cursor: pointer"
-			  mat-raised-button
-			  color="accent"
-			  (click)="downloadComponent()">archive</mat-icon>
-	<mat-label>Click to download component</mat-label>
+	<app-download [form]="formGroup"></app-download>
 </div>
 	<!--<button mat-raised-button (click)="downloadComponent()">Click to download component</button>-->

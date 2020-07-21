@@ -1,0 +1,12 @@
+<ng-container [ngSwitch]="icon">
+	<ng-container *ngSwitchCase="null">
+		<mat-spinner diameter="55"></mat-spinner>
+		<mat-label>Prepares your web component</mat-label>
+	</ng-container>
+	<ng-container *ngSwitchDefault>
+		<mat-icon [ngClass]="icon"
+				  color="accent"
+				  (click)="downloadComponent()">{{icon}}</mat-icon>
+		<mat-label>{{icon === 'done' ? 'Your web component successfully created' : 'Click to download web component'}}</mat-label>
+	</ng-container>
+</ng-container>
