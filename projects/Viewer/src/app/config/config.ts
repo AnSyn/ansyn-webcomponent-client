@@ -10,14 +10,14 @@ const config: configModel[] = [
 	},
 	{
 		id: 'footerCollapse',
-		hint: 'timeline could be collapse',
+		hint: 'Timeline could be collapse',
 		path: 'coreConfig.isFooterCollapsible',
 		type: 'boolean',
 		defaultValue: true
 	},
 	{
 		id: 'menuCollapse',
-		hint: 'menu could be collapse',
+		hint: 'Menu could be collapse',
 		path: 'menuConfig.isCollapsible',
 		type: 'boolean',
 		defaultValue: true
@@ -31,7 +31,7 @@ const config: configModel[] = [
 	},
 	{
 		id: 'filtersName',
-		hint: 'Filter to be showed',
+		hint: 'Filters to be showed',
 		placeholder: 'Filters',
 		path: 'statusBarConfig.filters.filterNames',
 		type: 'enum',
