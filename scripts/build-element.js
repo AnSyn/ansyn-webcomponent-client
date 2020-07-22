@@ -5,6 +5,7 @@ const Terser = require("terser");
 
 
 (async function build() {
+	console.log('building ansyn component');
 	const filesNames = [
 		`${distDir}/styles.js`,
 		`${distDir}/polyfills.js`,
@@ -28,7 +29,7 @@ const Terser = require("terser");
 			}
 			await fs.remove(`${distDir}/index.html`);
 
-			console.log(`component was created you can move ${distDir} content to the server app`);
+			console.log(`component was successfully created.\n you can move ${distDir} content to the server app`);
 		}
 	} catch (e) {
 		console.error(e.message);
