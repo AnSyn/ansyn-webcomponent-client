@@ -9,8 +9,8 @@
 		"test": "ng test",
 		"lint": "ng lint",
 		"e2e": "ng e2e",
-		"expose": "ngrok http --host-header=rewrite 4200",
-		"build:element": "ng build Builder --prod --single-bundle true --keep-polyfills  true --bundle-styles false"
+		"expose": "npx ngrok http --host-header=rewrite 4200",
+		"build:element": "ng build Builder --prod --single-bundle true --keep-polyfills  true --bundle-styles false && node scripts/build-element.js"
 	},
 	"private": true,
 	"dependencies": {
