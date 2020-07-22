@@ -4,8 +4,9 @@ import { environment } from '../../../../environments/environment';
 import { configModel } from '../../model/config.model';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
 import { saveAs } from 'file-saver';
-import { filter, tap } from 'rxjs/operators';
-import { Subscription } from 'rxjs';
+import { filter, tap, catchError } from 'rxjs/operators';
+import { Subscription, EMPTY } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 const set = require('lodash.set');
 
@@ -21,7 +22,8 @@ export class DownloadComponent implements OnInit, OnDestroy {
 	subscriptions: Subscription[] = [];
 
 	constructor(@Inject('config') protected appConfig: configModel[],
-				protected http: HttpClient) {
+				protected http: HttpClient,
+				private snackBar: MatSnackBar) {
 	}
 
 	ngOnInit() {
@@ -43,15 +45,22 @@ export class DownloadComponent implements OnInit, OnDestroy {
 		this.appConfig.forEach(({ path, id }) => {
 			set(merged, path, this.form.value[id]);
 		});
-		this.http.post(`${ environment.serverUrl }/test`, merged, {
+		this.http.post(`${ environment.serverUrl }/component`, merged, {
 			responseType: 'blob',
 			observe: 'events',
 			reportProgress: true
-		}).subscribe(this.parseEvent.bind(this));
+		}).pipe(
+			tap(this.parseEvent.bind(this)),
+			catchError((e) => {
+				this.snackBar.open('Error creating component', '', {politeness: 'assertive', duration: 2000});
+				this.icon = defaultIcon;
+				return EMPTY;
+			})).subscribe();
 
 	}
 
 	private parseEvent(event: HttpEvent<Blob>) {
+		console.log({event})
 		if (event.type === HttpEventType.Response) {
 			this.icon = 'done';
 			saveAs(event.body, 'custom-ansyn.tgz');
