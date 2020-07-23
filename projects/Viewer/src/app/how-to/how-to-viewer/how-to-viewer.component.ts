@@ -1,6 +1,7 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-how-to-viewer',
@@ -9,7 +10,10 @@ import { MatIconRegistry } from '@angular/material/icon';
 })
 export class HowToViewerComponent implements OnInit {
 	@HostBinding('class') class = 'content';
-	constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+	selectedIndex: number;
+
+	constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer,
+				protected router: Router) {
 		iconRegistry.addSvgIcon(
 			'angular',
 			sanitizer.bypassSecurityTrustResourceUrl('assets/Angular.svg'));
@@ -19,9 +23,14 @@ export class HowToViewerComponent implements OnInit {
 	}
 
 	ngOnInit() {
-}
+		this.selectedIndex = 1;
+	}
 
-	goBack() {
-		console.log('go back');
+	selectIndex(index: number) {
+		if (index === 0) {
+			this.router.navigate(['']);
+		} else {
+			this.selectedIndex = index;
+		}
 	}
 }
