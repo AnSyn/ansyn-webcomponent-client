@@ -22,3 +22,9 @@ body {
 .mat-slider-thumb-label-text {
 	opacity: 1 !important;
 }
+
+.content {
+	display: flex;
+	width: 500px;
+	margin: 10px auto;
+}

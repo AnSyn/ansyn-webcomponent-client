@@ -1,4 +1,4 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit, HostBinding } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { configModel } from '../../model/config.model';
 
@@ -9,6 +9,7 @@ import { configModel } from '../../model/config.model';
 })
 export class ConfigEditorComponent implements OnInit {
 	@Input() form: FormGroup;
+	@HostBinding('class') class = 'content';
 	constructor(@Inject('config') public appConfig: configModel[]) {
 	}
 
