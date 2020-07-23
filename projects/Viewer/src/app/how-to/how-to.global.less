@@ -1,9 +1,15 @@
 :host {
-	font-size: 20px;
+	font-size: 18px;
+	.filename {
+		font-style: italic;
+	}
+	code:not(.one-line):after {
+		content: "\A";
+		white-space: pre;
+	}
 	code, .code {
 		background-color: #e6e6e6;
 		color: #888080;
-
 		.key {
 			color: purple;
 		}

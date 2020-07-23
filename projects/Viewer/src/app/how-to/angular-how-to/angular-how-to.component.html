@@ -1,21 +1,22 @@
 <h2>Import Ansyn Component Into Angular App</h2>
 <ol class="how-to">
 	<li>copy the folder content into new folder inside your root project folder.</li>
-	<li> inside app.module.ts add CUSTOM_ELEMENT_SCHEMA to schemas array.</li>
-	<li> inside angular.json add to your project assets array:
-		<pre class="code">
-		{{'{'}}
-			<span class="key">"input"</span>: <span class="value">"&lt;name_of_folder_from_step1&gt;/assets"</span>,
-			<span class="key">"output"</span>: <span class="value">"/assets"</span>
-			{{'}'}},
-			{{'{'}}
-			<span class="key">"input"</span>: <span class="value">"&lt;name_of_folder_from_step1&gt;/res"</span>,
-			<span class="key">"output"</span>: <span class="value">"/res"</span>
-			{{'}'}}</pre>
+	<li>add <code><span class="tag">schemas: [CUSTOM_ELEMENT_SCHEMA]</span></code>
+		<br>in your <span class="filename">app.module.ts</span>
 	</li>
-	<li> inside angular.json add to your project scripts array:
+	<li> inside <span class="filename">angular.json</span> add to your project assets array:
+		<pre class="code">
+{{'{'}}
+  <span class="key">"input"</span>: <span class="value">"&lt;name_of_folder_from_step1&gt;/assets"</span>,
+  <span class="key">"output"</span>: <span class="value">"/assets"</span>
+{{'}'}},
+{{'{'}}
+  <span class="key">"input"</span>: <span class="value">"&lt;name_of_folder_from_step1&gt;/res"</span>,
+  <span class="key">"output"</span>: <span class="value">"/res"</span>
+{{'}'}}</pre>
+	</li>
+	<li> inside <span class="filename">angular.json</span> add to your project scripts array: <br>
 		<code><span class="value">"&lt;name_of_folder_from_step1&gt;/custom-ansyn.min.js"</span></code>
 	</li>
-	<li>you can use <code><span class="tag">&lt;custom-ansyn&gt;&lt;/custom-ansyn&gt;</span></code> inside your app.
-	</li>
+	<li> you can use <code class="one-line"><span class="tag">&lt;custom-ansyn&gt;</span></code> anywhere in your app.</li>
 </ol>

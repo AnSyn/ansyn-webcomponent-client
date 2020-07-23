@@ -1,5 +1,7 @@
 <mat-tab-group [selectedIndex]="1"
-			   (selectedIndexChange)="selectIndex($event)">
+			   (selectedIndexChange)="selectIndex($event)"
+			   dynamicHeight
+>
 	<mat-tab>
 		<ng-template mat-tab-label>
 			<mat-icon>arrow_back</mat-icon>
