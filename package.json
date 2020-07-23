@@ -10,7 +10,9 @@
 		"lint": "ng lint",
 		"e2e": "ng e2e",
 		"expose": "npx ngrok http --host-header=rewrite 4200",
-		"build:element": "ng build Builder --prod --single-bundle true --keep-polyfills  true --bundle-styles false && node scripts/build-element.js"
+		"build:element": "ng build Builder --prod --single-bundle true --keep-polyfills  true --bundle-styles false && node scripts/build-element.js",
+		"build:viewer": "ng build Viewer --prod",
+		"build:all": "npm run build:viewer && npm run build:element"
 	},
 	"private": true,
 	"dependencies": {
