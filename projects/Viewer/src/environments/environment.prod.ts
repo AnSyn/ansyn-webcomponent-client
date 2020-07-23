@@ -1,4 +1,6 @@
+import { environment as env} from './environment';
+
 export const environment = {
-	production: true,
-	serverUrl: 'http://localhost:8888'
+	...env,
+	production: true
 };

@@ -1,9 +1,9 @@
-<h2>Import Ansyn Component Into Html App</h2>
+<h2>Import {{appName | titlecase}} Component Into Html App</h2>
 <ol class="how-to">
 	<li>copy the folder content to your root project.</li>
 	<li>in <span class="filename">index.html</span> add a <code class="code">
-		<span class="tag">&lt;script&gt;</span> src="custom-ansyn.min.js"<span class="tag">&lt;/script&gt;</span></code>
+		<span class="tag">&lt;script&gt;</span> src="{{elementName}}.min.js"<span class="tag">&lt;/script&gt;</span></code>
 	</li>
 
-	<li> you can use <code class="one-line"><span class="tag">&lt;custom-ansyn&gt;</span></code> anywhere in your app.</li>
+	<li> you can use <code class="one-line"><span class="tag">&lt;{{elementName}}&gt;</span></code> anywhere in your app.</li>
 </ol>

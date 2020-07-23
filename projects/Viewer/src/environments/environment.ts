@@ -4,7 +4,10 @@
 
 export const environment = {
 	production: false,
-	serverUrl: 'http://localhost:8888'
+	logo: 'assets/logo.svg',
+	serverUrl: 'http://localhost:8888',
+	appName: 'ansyn',
+	elementName: 'custom-ansyn'
 };
 
 /*
