@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HowToViewerComponent } from './how-to-viewer.component';
+import { AngularHowToComponent } from './angular-how-to.component';
 
-describe('HowToViewerComponent', () => {
-	let component: HowToViewerComponent;
-	let fixture: ComponentFixture<HowToViewerComponent>;
+describe('AngularHowToComponent', () => {
+	let component: AngularHowToComponent;
+	let fixture: ComponentFixture<AngularHowToComponent>;
 
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			declarations: [HowToViewerComponent]
+			declarations: [AngularHowToComponent]
 		})
 			.compileComponents();
 	}));
 
 	beforeEach(() => {
-		fixture = TestBed.createComponent(HowToViewerComponent);
+		fixture = TestBed.createComponent(AngularHowToComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

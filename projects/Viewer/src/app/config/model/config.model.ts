@@ -3,6 +3,7 @@ interface IConfigModel {
 	path: string;
 	hint: string;
 }
+
 interface INumberConfigModel extends IConfigModel {
 	type: 'number';
 	defaultValue: number;

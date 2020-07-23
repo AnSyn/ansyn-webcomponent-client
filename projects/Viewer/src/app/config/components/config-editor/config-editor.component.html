@@ -14,15 +14,15 @@
 			*ngSwitchCase="'boolean'"></mat-slide-toggle>
 		<mat-form-field *ngSwitchCase="'enum'">
 			<mat-label>{{config.placeholder}}</mat-label>
-		<mat-select multiple
-					[formControlName]="config.id">
-			<mat-option *ngFor="let v of config.enum" [value]="v">{{v}}</mat-option>
-		</mat-select>
+			<mat-select multiple
+						[formControlName]="config.id">
+				<mat-option *ngFor="let v of config.enum" [value]="v">{{v}}</mat-option>
+			</mat-select>
 		</mat-form-field>
 		<mat-form-field *ngSwitchCase="'string'">
-		<input matInput [placeholder]="config.placeholder"
-			   [formControlName]="config.id"
-			   [value]="config.defaultValue">
+			<input matInput [placeholder]="config.placeholder"
+				   [formControlName]="config.id"
+				   [value]="config.defaultValue">
 		</mat-form-field>
 	</ng-container>
 </div>

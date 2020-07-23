@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ConfigViewerComponent } from './config/components/config-viewer/config-viewer.component';
-import { HowToModule } from './how-to/how-to.module';
 import { HowToViewerComponent } from './how-to/how-to-viewer/how-to-viewer.component';
 
 const routes: Routes = [

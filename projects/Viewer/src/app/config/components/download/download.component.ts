@@ -4,13 +4,14 @@ import { environment } from '../../../../environments/environment';
 import { configModel } from '../../model/config.model';
 import { HttpClient, HttpEvent, HttpEventType } from '@angular/common/http';
 import { saveAs } from 'file-saver';
-import { filter, tap, catchError } from 'rxjs/operators';
-import { Subscription, EMPTY } from 'rxjs';
+import { catchError, filter, tap } from 'rxjs/operators';
+import { EMPTY, Subscription } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 const set = require('lodash.set');
 
 const defaultIcon = 'archive';
+
 @Component({
 	selector: 'app-download',
 	templateUrl: './download.component.html',
@@ -34,8 +35,9 @@ export class DownloadComponent implements OnInit, OnDestroy {
 			).subscribe()
 		);
 	}
+
 	ngOnDestroy(): void {
-		this.subscriptions.forEach( (sub) => sub.unsubscribe());
+		this.subscriptions.forEach((sub) => sub.unsubscribe());
 	}
 
 
@@ -52,7 +54,7 @@ export class DownloadComponent implements OnInit, OnDestroy {
 		}).pipe(
 			tap(this.parseEvent.bind(this)),
 			catchError((e) => {
-				this.snackBar.open('Error creating component', '', {politeness: 'assertive', duration: 2000});
+				this.snackBar.open('Error creating component', '', { politeness: 'assertive', duration: 2000 });
 				this.icon = defaultIcon;
 				return EMPTY;
 			})).subscribe();
@@ -60,7 +62,7 @@ export class DownloadComponent implements OnInit, OnDestroy {
 	}
 
 	private parseEvent(event: HttpEvent<Blob>) {
-		console.log({event})
+		console.log({ event });
 		if (event.type === HttpEventType.Response) {
 			this.icon = 'done';
 			saveAs(event.body, 'custom-ansyn.tgz');
